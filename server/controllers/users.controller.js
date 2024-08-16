@@ -124,10 +124,20 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   res.json({ message: "User profile updated successfully", updatedUser });
 });
 
+const getAllUsers = asyncHandler(async (req, res) => {
+  const users = await User.find().select("-password").lean();
+
+  if (!users?.length) {
+    return res.status(400).json({ message: "No Users Found" });
+  }
+  res.json(users);
+});
+
 module.exports = {
   register,
   profile,
   login,
   changeUserPassword,
   updateUserProfile,
+  getAllUsers,
 };

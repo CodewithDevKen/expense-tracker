@@ -4,6 +4,7 @@ const {
   create,
   update,
   remove,
+  getAllCategories,
 } = require("../controllers/categories.controller");
 const isAuthenticated = require("../middlewares/isAuth");
 

@@ -114,7 +114,7 @@ export default function Login() {
                   mb="1rem"
                   color={theme.palette.primary[500]}
                 >
-                  LEAVE MANAGEMENT SYSTEM
+                  Expense Tracker App
                 </Typography>
                 <Box component="form" onSubmit={formik.handleSubmit}>
                   <TextField
